@@ -2,29 +2,30 @@ import axios from 'axios';
 
 const FETCH_DATA = 'space-travelers/missions/FETCH-DATA';
 
-const initialState = []
+const initialState = [];
 
-export const fetchData = () => async(dispatch) => {
-  const response = await axios.get('https://api.spacexdata.com/v3/missions')
-  const payload = response.data.map(el => {
-    const { mission_id, mission_name, description } = el
-    el = {mission_id, mission_name, description}
-    return el
-  })
+export const fetchData = () => async (dispatch) => {
+  const response = await axios.get('https://api.spacexdata.com/v3/missions');
+  const payload = response.data.map((el) => {
+    const missionId = el.mission_id;
+    const missionName = el.mission_name;
+    const { description } = el;
+    const newEl = { missionId, missionName, description };
+    return newEl;
+  });
   dispatch({
     type: FETCH_DATA,
-    payload
-  })
-  console.log(payload)
-}
+    payload,
+  });
+};
 
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_DATA:
-      return action.payload
+      return action.payload;
     default:
       return state;
   }
 };
 
-export default missionsReducer
+export default missionsReducer;

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Routes, Route, NavLink,
+} from 'react-router-dom';
 import store from './redux/configureStore';
 import Missions from './Missions';
 import Profile from './Profile';
 import Rockets from './Rockets';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => (
