@@ -1,8 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+import missionsReducer from './mission/missions';
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  missionsReducer,
+});
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));
 
