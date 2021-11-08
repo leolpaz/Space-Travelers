@@ -2,7 +2,10 @@ import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter as Router, Routes, Route, NavLink,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
 } from 'react-router-dom';
 import store from './redux/configureStore';
 import Missions from './Missions';
@@ -18,9 +21,15 @@ const App = () => (
           <Container>
             <Navbar.Brand href="/">Space Travelers Hub</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link as={NavLink} to="/">Rockets</Nav.Link>
-              <Nav.Link as={NavLink} to="/missions">Missions</Nav.Link>
-              <Nav.Link as={NavLink} to="/profile">My Profile</Nav.Link>
+              <Nav.Link as={NavLink} to="/">
+                Rockets
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/missions">
+                Missions
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/profile">
+                My Profile
+              </Nav.Link>
             </Nav>
           </Container>
         </Navbar>
