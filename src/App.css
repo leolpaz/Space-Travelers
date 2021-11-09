@@ -3,6 +3,10 @@
   margin-left: auto;
 }
 
+.nav-link {
+  color: #0d6efd !important;
+}
+
 .nav-link.active {
   text-decoration: underline;
 }

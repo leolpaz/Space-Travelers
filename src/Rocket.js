@@ -27,11 +27,29 @@ const Rocket = (props) => {
       </div>
       <div className="data-container">
         <h3>{rocketName}</h3>
-        <span>{description}</span>
+        <span>
+          {reserved && (
+            <span className="p-1 m-0 bg-dark-blue text-white rounded-2">
+              Reserved
+            </span>
+          )}
+          {' '}
+          {description}
+        </span>
         {reserved ? (
-          <Button className="reserve-btn" variant="secondary" onClick={() => cancelRocketReserv(id)}>Reserved</Button>
+          <Button
+            className="reserve-btn"
+            variant="outline-secondary"
+            onClick={() => cancelRocketReserv(id)}
+          >
+            Cancel Reservation
+          </Button>
         ) : (
-          <Button className="reserve-btn" variant="primary" onClick={() => reserveNewRocket(id)}>
+          <Button
+            className="reserve-btn"
+            variant="primary"
+            onClick={() => reserveNewRocket(id)}
+          >
             Reserve Rocket
           </Button>
         )}
