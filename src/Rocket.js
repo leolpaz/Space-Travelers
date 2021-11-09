@@ -21,7 +21,7 @@ const Rocket = (props) => {
   };
 
   return (
-    <ListGroup.Item className="rocket-item-container">
+    <ListGroup.Item className="rocket-item-container" data-testid="list-group-item">
       <div className="img-container">
         <img src={flickrImages} alt="Rocket" />
       </div>
