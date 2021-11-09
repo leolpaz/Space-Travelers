@@ -29,9 +29,9 @@ const Rocket = (props) => {
         <h3>{rocketName}</h3>
         <span>{description}</span>
         {reserved ? (
-          <Button variant="secondary" onClick={() => cancelRocketReserv(id)}>Reserved</Button>
+          <Button className="reserve-btn" variant="secondary" onClick={() => cancelRocketReserv(id)}>Reserved</Button>
         ) : (
-          <Button variant="primary" onClick={() => reserveNewRocket(id)}>
+          <Button className="reserve-btn" variant="primary" onClick={() => reserveNewRocket(id)}>
             Reserve Rocket
           </Button>
         )}
