@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ListGroup } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
 import Rocket from './Rocket';
 import { fetchRockets } from './redux/rockets/rockets';
 
@@ -13,18 +13,20 @@ const Rockets = () => {
     }
   }, []);
   return (
-    <ListGroup>
-      {rockets.map((element) => (
-        <Rocket
-          key={element.id}
-          id={element.id}
-          rocketName={element.rocketName}
-          description={element.description}
-          flickrImages={element.flickrImages[0]}
-          reserved={element.reserved}
-        />
-      ))}
-    </ListGroup>
+    <Container>
+      <ListGroup>
+        {rockets.map((element) => (
+          <Rocket
+            key={element.id}
+            id={element.id}
+            rocketName={element.rocketName}
+            description={element.description}
+            flickrImages={element.flickrImages[0]}
+            reserved={element.reserved}
+          />
+        ))}
+      </ListGroup>
+    </Container>
   );
 };
 
