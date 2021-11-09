@@ -15,7 +15,7 @@ const Rocket = (props) => {
       <div className="data-container">
         <h3>{rocketName}</h3>
         <span>{description}</span>
-        <Button variant="primary">Reserve Rocket</Button>
+        <Button className="reserve-btn" variant="primary">Reserve Rocket</Button>
       </div>
     </ListGroup.Item>
   );
