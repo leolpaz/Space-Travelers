@@ -1,14 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ListGroup } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
+import RocketReserved from './RocketReserved';
 
 const RocketsProfileList = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
-  console.log(rockets);
+  const rocketsReserved = rockets.filter((rocket) => rocket.reserved === true);
   return (
-    <ListGroup>
-      <ListGroup.Item>dsads</ListGroup.Item>
-    </ListGroup>
+    <Container>
+      <ListGroup>
+        <h2>My Rockets</h2>
+        {rocketsReserved.map((rocket) => (
+          <RocketReserved key={rocket.id} name={rocket.rocketName} />
+        ))}
+      </ListGroup>
+    </Container>
   );
 };
 

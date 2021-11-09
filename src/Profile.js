@@ -4,6 +4,7 @@ import RocketsProfileList from './ProfileRockets';
 
 const Profile = () => (
   <Container className="d-flex">
+    {/* Mission Container */}
     <RocketsProfileList />
   </Container>
 );
