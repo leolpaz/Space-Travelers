@@ -10,7 +10,7 @@ const ProfileMissions = () => {
   return (
     <Container>
       <ListGroup>
-        <h1>My missions</h1>
+        <h2>My missions</h2>
         {reservedMissions.map((mission) => (
           <SingleProfileMission
             key={mission.missionId}
