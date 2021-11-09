@@ -21,7 +21,7 @@ const Rocket = (props) => {
   };
 
   return (
-    <ListGroup.Item>
+    <ListGroup.Item className="rocket-item-container">
       <div className="img-container">
         <img src={flickrImages} alt="Rocket" />
       </div>
