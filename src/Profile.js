@@ -1,5 +1,8 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
-const Profile = () => <h1>Profile Page</h1>;
+const Profile = () => (
+  <Container className="d-flex" />
+);
 
 export default Profile;
