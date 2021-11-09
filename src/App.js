@@ -11,7 +11,6 @@ import store from './redux/configureStore';
 import Missions from './Missions';
 import Profile from './Profile';
 import Rockets from './Rockets';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => (
