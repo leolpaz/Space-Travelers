@@ -1,12 +1,18 @@
 import axios from 'axios';
 
 const RESERVE_ROCKET = 'RESERVE_ROCKET_SUCCES';
+const CANCEL_RESERVATION = 'CANCEL_RESERVATION_SUCCES';
 const FETCH_ROCKETS_DATA = 'space-travelers/rockets/FETCH-DATA';
 const END_POINT_URL = 'https://api.spacexdata.com/v3/rockets';
 const initialState = [];
 
 export const reserveRocket = (payload) => ({
   type: RESERVE_ROCKET,
+  payload,
+});
+
+export const rocketCancelation = (payload) => ({
+  type: CANCEL_RESERVATION,
   payload,
 });
 
@@ -39,6 +45,13 @@ const rocketsReducer = (state = initialState, action) => {
       const newState = state.map((rocket) => {
         if (rocket.id !== action.payload) return rocket;
         return { ...rocket, reserved: true };
+      });
+      return newState;
+    }
+    case CANCEL_RESERVATION: {
+      const newState = state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
       });
       return newState;
     }

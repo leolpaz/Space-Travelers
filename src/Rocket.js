@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { ListGroup, Button } from 'react-bootstrap';
-import { reserveRocket } from './redux/rockets/rockets';
+import { reserveRocket, rocketCancelation } from './redux/rockets/rockets';
 import './Rocket.css';
 
 const Rocket = (props) => {
@@ -16,16 +16,9 @@ const Rocket = (props) => {
     dispatch(reserveRocket(id));
   };
 
-  const itsReserved = () => {
-    if (reserved) {
-      return <Button variant="secondary">Reserved</Button>;
-    }
-    return <Button variant="primary" onClick={() => reserveNewRocket(id)}>Reserve Rocket</Button>;
+  const cancelRocketReserv = (id) => {
+    dispatch(rocketCancelation(id));
   };
-
-  useEffect(() => {
-    itsReserved();
-  });
 
   return (
     <ListGroup.Item>
@@ -35,7 +28,13 @@ const Rocket = (props) => {
       <div className="data-container">
         <h3>{rocketName}</h3>
         <span>{description}</span>
-        {itsReserved()}
+        {reserved ? (
+          <Button variant="secondary" onClick={() => cancelRocketReserv(id)}>Reserved</Button>
+        ) : (
+          <Button variant="primary" onClick={() => reserveNewRocket(id)}>
+            Reserve Rocket
+          </Button>
+        )}
       </div>
     </ListGroup.Item>
   );
