@@ -17,7 +17,7 @@ const Missions = () => {
   }, []);
   return (
     <Container>
-      <Table className="mx-auto" striped bordered hover>
+      <Table data-testid="list-container" className="mx-auto" striped bordered hover>
         <thead>
           <tr>
             <th>Mission</th>
