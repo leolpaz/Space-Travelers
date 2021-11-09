@@ -1,0 +1,28 @@
+.list-group-item {
+  display: flex !important;
+  align-items: center !important;
+  margin: 1rem;
+  border: 1px solid white !important;
+}
+
+.img-container {
+  padding: 1rem;
+}
+
+.img-container > img {
+  float: left;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh 2vw;
+  padding-right: 6vw;
+}
+
+.btn {
+  margin: 4vh auto 0 0.1vh;
+}
