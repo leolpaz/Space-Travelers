@@ -21,6 +21,7 @@ const Rockets = () => {
           rocketName={element.rocketName}
           description={element.description}
           flickrImages={element.flickrImages[0]}
+          reserved={element.reserved}
         />
       ))}
     </ListGroup>
