@@ -3,6 +3,14 @@
   margin-left: auto;
 }
 
+.nav-link.active {
+  text-decoration: underline;
+}
+
 .bg-extra-dark {
   background-color: rgb(109, 117, 125);
+}
+
+.bg-dark-blue {
+  background-color: rgb(24, 162, 184);
 }
